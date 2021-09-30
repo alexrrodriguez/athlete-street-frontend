@@ -17,6 +17,7 @@
         <div v-for="quantity in order.carted_products" :key="quantity.id">
           <p v-if="quantity.product_id == product.id">Quantity: {{ quantity.quantity }}</p>
         </div>
+        <router-link v-bind:to="`/products/${product.id}`">More details</router-link>
       </div>
     </div>
   </div>
