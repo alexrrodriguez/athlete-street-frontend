@@ -43,7 +43,7 @@
                         <li><a href="checkout.html">Product Checkout</a></li>
                       </ul>
                     </li> -->
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/contact">Contact</a></li>
                   </ul>
                 </nav>
               </div>

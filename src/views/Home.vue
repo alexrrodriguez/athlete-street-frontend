@@ -10,22 +10,20 @@
               <div class="row justify-content-between align-items-center">
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                   <div class="hero__caption">
-                    <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">
-                      Select Your New Perfect Style
-                    </h1>
+                    <h2>Welcome To</h2>
+                    <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Athlete Street</h1>
                     <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat is aute irure.
+                      Find your perfect style of athletic wear and accessories
                     </p>
                     <!-- Hero-btn -->
                     <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                      <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                      <a href="/shop" class="btn hero-btn">Shop Now</a>
                     </div>
                   </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
                   <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                    <img src="assets/img/hero/watch.png" alt="" class="heartbeat" />
+                    <img src="assets/img/hero/pngwing.com.png" alt="" class="heartbeat home-img" />
                   </div>
                 </div>
               </div>
@@ -49,33 +47,33 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-new-pro mb-30 text-center">
                 <div class="product-img">
-                  <img src="assets/img/gallery/new_product1.png" alt="" />
+                  <img src="assets/img/gallery/addidas-women-shoe.jpg" alt="" />
                 </div>
                 <div class="product-caption">
-                  <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                  <span>$ 45,743</span>
+                  <h3><a href="product_details.html">Nike Women's Flex Experience 9 Running Shoes</a></h3>
+                  <span>$ 25.99</span>
                 </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-new-pro mb-30 text-center">
                 <div class="product-img">
-                  <img src="assets/img/gallery/new_product2.png" alt="" />
+                  <img src="assets/img/gallery/addidas-men-shoe.jpg" alt="" />
                 </div>
                 <div class="product-caption">
-                  <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                  <span>$ 45,743</span>
+                  <h3><a href="product_details.html">RUNFALCON 2.0 SHOES</a></h3>
+                  <span>$ 42.00</span>
                 </div>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-new-pro mb-30 text-center">
                 <div class="product-img">
-                  <img src="assets/img/gallery/new_product3.png" alt="" />
+                  <img src="assets/img/gallery/addidas-women-shoe2.webp" alt="" />
                 </div>
                 <div class="product-caption">
-                  <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                  <span>$ 45,743</span>
+                  <h3><a href="product_details.html">Pacer Future Women's Sneakers</a></h3>
+                  <span>$ 70.00</span>
                 </div>
               </div>
             </div>
@@ -243,7 +241,7 @@
           <!-- Button -->
           <div class="row justify-content-center">
             <div class="room-btn pt-70">
-              <a href="catagori.html" class="btn view-btn1">View More Products</a>
+              <a href="/shop" class="btn view-btn1">Shop More Products</a>
             </div>
           </div>
         </div>
@@ -256,7 +254,7 @@
             <div class="col-lg-12">
               <div class="video-wrap">
                 <div class="play-btn">
-                  <a class="popup-video" href="https://www.youtube.com/watch?v=KMc6DyEJp04">
+                  <a class="popup-video" href="https://www.youtube.com/watch?v=NP7oNGpH-LQ">
                     <i class="fas fa-play"></i>
                   </a>
                 </div>
@@ -266,8 +264,8 @@
           <!-- Arrow -->
           <div class="thumb-content-box">
             <div class="thumb-content">
-              <h3>Next Video</h3>
-              <a href="#"><i class="flaticon-arrow"></i></a>
+              <h3>Browse Products</h3>
+              <a href="/shop"><i class="flaticon-arrow"></i></a>
             </div>
           </div>
         </div>
@@ -345,18 +343,23 @@
       </div>
       <!-- Shop Method End-->
     </main>
-    <h1>All Products</h1>
+    <!-- <h1>All Products</h1>
     <div v-for="product in products" v-bind:key="product.id">
       <img :src="product.image_url" alt="product.name" />
       <h2>{{ product.name }}</h2>
       <p>{{ product.price }}</p>
       <p>{{ product.description }}</p>
       <router-link v-bind:to="`/products/${product.id}`">More details</router-link>
-    </div>
+    </div> -->
   </div>
 </template>
 
-<style></style>
+<style>
+.home-img {
+  height: 36rem;
+  width: 26rem;
+}
+</style>
 
 <script>
 import axios from "axios";
