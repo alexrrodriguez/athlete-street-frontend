@@ -98,6 +98,9 @@
                         <a :href="`/products/${product.id}`">{{ product.name }}</a>
                       </h3>
                       <span>$ {{ product.price }}</span>
+                      <router-link v-bind:to="`/products/${product.id}`">
+                        <button class="genric-btn info-border">More details</button>
+                      </router-link>
                     </div>
                   </div>
                 </div>

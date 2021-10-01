@@ -157,6 +157,9 @@
                     <a href="product_details.html">{{ popular.name }}</a>
                   </h3>
                   <span>$ {{ popular.price }}</span>
+                  <router-link v-bind:to="`/products/${popular.id}`">
+                    <button class="genric-btn info-border">More details</button>
+                  </router-link>
                 </div>
               </div>
             </div>

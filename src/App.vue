@@ -8,7 +8,7 @@
             <div class="menu-wrapper">
               <!-- Logo -->
               <div class="logo">
-                <a href="/"><img src="assets/img/logo/logo.png" alt="" /></a>
+                <a href="/"><img src="assets/img/logo/athlete-street.png" alt="" /></a>
               </div>
               <!-- Main-menu -->
               <div class="main-menu d-none d-lg-block">
@@ -16,18 +16,19 @@
                   <ul id="navigation">
                     <li><a href="/">Home</a></li>
                     <li>
-                      <a>Shop</a>
+                      <a href="/shop">Shop</a>
                       <ul class="submenu">
-                        <li><a href="shop.html">Mens</a></li>
-                        <li><a href="product_details.html">Womens</a></li>
+                        <li><a href="/shop">Mens</a></li>
+                        <li><a href="/shop">Womens</a></li>
                       </ul>
                     </li>
+                    <li><a v-if="isLoggedIn()" href="/cart">Cart</a></li>
+                    <li><a v-if="isLoggedIn()" href="/orders">Orders</a></li>
                     <li><a href="/about">About</a></li>
-                    <li><a href="/cart">Cart</a></li>
-                    <li><a href="/orders">Orders</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/signup">Signup</a></li>
-                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a v-if="!isLoggedIn()" href="/login">Login</a></li>
+                    <li><a v-if="!isLoggedIn()" href="/signup">Signup</a></li>
+                    <li><a v-if="isLoggedIn()" href="/logout">Logout</a></li>
                     <!-- <li>
                       <a href="blog.html">Blog</a>
                       <ul class="submenu">
@@ -45,7 +46,6 @@
                         <li><a href="checkout.html">Product Checkout</a></li>
                       </ul>
                     </li> -->
-                    <li><a href="/contact">Contact</a></li>
                   </ul>
                 </nav>
               </div>
@@ -58,7 +58,8 @@
                     </div>
                   </li>
                   <li>
-                    <a href="/login"><span class="flaticon-user"></span></a>
+                    <a v-if="!isLoggedIn()" href="/login"><span class="flaticon-user"></span></a>
+                    <a v-if="isLoggedIn()" href="/orders"><span class="flaticon-user"></span></a>
                   </li>
                   <li>
                     <a href="/cart"><span class="flaticon-shopping-cart"></span></a>
@@ -232,3 +233,17 @@
 </template>
 
 <style></style>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
