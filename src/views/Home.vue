@@ -87,12 +87,18 @@
           <div class="row">
             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6">
               <div class="single-gallery mb-30">
-                <div class="gallery-img big-img" style="background-image: url(assets/img/gallery/gallery1.png)"></div>
+                <div
+                  class="gallery-img big-img"
+                  style="background-image: url(assets/img/gallery/nike-womens-shoe-1.jpeg)"
+                ></div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
               <div class="single-gallery mb-30">
-                <div class="gallery-img big-img" style="background-image: url(assets/img/gallery/gallery2.png)"></div>
+                <div
+                  class="gallery-img big-img"
+                  style="background-image: url(assets/img/gallery/nike-mens-shoe1.jpeg)"
+                ></div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-12">
@@ -101,7 +107,7 @@
                   <div class="single-gallery mb-30">
                     <div
                       class="gallery-img small-img"
-                      style="background-image: url(assets/img/gallery/gallery3.png)"
+                      style="background-image: url(assets/img/gallery/puma-womens-shoe.jpeg)"
                     ></div>
                   </div>
                 </div>
@@ -109,7 +115,7 @@
                   <div class="single-gallery mb-30">
                     <div
                       class="gallery-img small-img"
-                      style="background-image: url(assets/img/gallery/gallery4.png)"
+                      style="background-image: url(assets/img/gallery/addidas-mens-shoe3.jpeg)"
                     ></div>
                   </div>
                 </div>
@@ -135,10 +141,10 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div v-for="popular in populars" v-bind:key="popular.id" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-popular-items mb-50 text-center">
                 <div class="popular-img">
-                  <img src="assets/img/gallery/popular1.png" alt="" />
+                  <img class="product-img" :src="popular.image_url" :alt="popular.name" />
                   <div class="img-cap">
                     <span>Add to cart</span>
                   </div>
@@ -147,12 +153,14 @@
                   </div>
                 </div>
                 <div class="popular-caption">
-                  <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                  <span>$ 45,743</span>
+                  <h3>
+                    <a href="product_details.html">{{ popular.name }}</a>
+                  </h3>
+                  <span>$ {{ popular.price }}</span>
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-popular-items mb-50 text-center">
                 <div class="popular-img">
                   <img src="assets/img/gallery/popular2.png" alt="" />
@@ -236,7 +244,7 @@
                   <span>$ 45,743</span>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <!-- Button -->
           <div class="row justify-content-center">
@@ -311,37 +319,6 @@
         </div>
       </div>
       <!-- Watch Choice  End-->
-      <!--? Shop Method Start-->
-      <div class="shop-method-area">
-        <div class="container">
-          <div class="method-wrapper">
-            <div class="row d-flex justify-content-between">
-              <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-method mb-40">
-                  <i class="ti-package"></i>
-                  <h6>Free Shipping Method</h6>
-                  <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-method mb-40">
-                  <i class="ti-unlock"></i>
-                  <h6>Secure Payment System</h6>
-                  <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-method mb-40">
-                  <i class="ti-reload"></i>
-                  <h6>Secure Payment System</h6>
-                  <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Shop Method End-->
     </main>
     <!-- <h1>All Products</h1>
     <div v-for="product in products" v-bind:key="product.id">
@@ -359,6 +336,9 @@
   height: 36rem;
   width: 26rem;
 }
+.product-img {
+  height: 360px;
+}
 </style>
 
 <script>
@@ -367,17 +347,17 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      products: [],
+      populars: [],
     };
   },
   created: function () {
-    this.indexProducts();
+    this.popularProducts();
   },
   methods: {
-    indexProducts: function () {
-      axios.get("/products").then((response) => {
-        console.log("products index", response);
-        this.products = response.data;
+    popularProducts: function () {
+      axios.get("/popular").then((response) => {
+        console.log("popular products index", response);
+        this.populars = response.data;
       });
     },
   },

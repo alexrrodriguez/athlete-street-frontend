@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import ProductsIndex from "../views/ProductsIndex.vue";
+import Shop from "../views/Shop.vue";
 import ProductsShow from "../views/ProductsShow.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
@@ -19,8 +19,8 @@ const routes = [
   },
   {
     path: "/shop",
-    name: "products-index",
-    component: ProductsIndex,
+    name: "Shop",
+    component: Shop,
   },
   {
     path: "/cart",

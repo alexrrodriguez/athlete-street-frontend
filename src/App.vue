@@ -15,25 +15,27 @@
                 <nav>
                   <ul id="navigation">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/shop">Shop</a></li>
+                    <li>
+                      <a>Shop</a>
+                      <ul class="submenu">
+                        <li><a href="shop.html">Mens</a></li>
+                        <li><a href="product_details.html">Womens</a></li>
+                      </ul>
+                    </li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/cart">Cart</a></li>
                     <li><a href="/orders">Orders</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Signup</a></li>
+                    <li><a href="/logout">Logout</a></li>
                     <!-- <li>
-                      <a href="#">Cart</a>
-                      <ul class="submenu">
-                        <li><a href="shop.html">Orders</a></li>
-                        <li><a href="product_details.html">Product Details</a></li>
-                      </ul>
-                    </li>
-                    <li>
                       <a href="blog.html">Blog</a>
                       <ul class="submenu">
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="blog-details.html">Blog Details</a></li>
                       </ul>
-                    </li> -->
-                    <!-- <li>
+                    </li>
+                    <li>
                       <a href="#">Pages</a>
                       <ul class="submenu">
                         <li><a href="login.html">Login</a></li>
@@ -91,6 +93,37 @@
       <router-link to="/logout">Logout</router-link>
     </div> -->
     <router-view />
+    <!--? Shop Method Start-->
+    <div class="shop-method-area">
+      <div class="container">
+        <div class="method-wrapper">
+          <div class="row d-flex justify-content-between">
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="single-method mb-40">
+                <i class="ti-package"></i>
+                <h6>Free Shipping Method</h6>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="single-method mb-40">
+                <i class="ti-unlock"></i>
+                <h6>Secure Payment System</h6>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="single-method mb-40">
+                <i class="ti-reload"></i>
+                <h6>Secure Payment System</h6>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Shop Method End-->
     <footer>
       <!-- Footer Start-->
       <div class="footer-area footer-padding">
