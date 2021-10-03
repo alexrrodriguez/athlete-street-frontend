@@ -211,7 +211,7 @@
                     <label for="f-option4">I’ve read and accept the</label>
                     <a href="#">terms & conditions*</a>
                   </div>
-                  <a class="btn_3" href="#">Proceed to Paypal</a>
+                  <a class="btn_3" href="/confirmation">Confirm Checkout</a>
                 </div>
               </div>
             </div>

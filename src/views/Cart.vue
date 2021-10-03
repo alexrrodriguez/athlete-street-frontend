@@ -115,15 +115,17 @@
                           <option value="4">California</option>
                         </select>
                         <input class="post_code" type="text" placeholder="Postcode/Zipcode" />
-                        <a class="btn_1" href="#">Update Details</a>
+                        <a class="btn_1" href="#">Calculate Shipping</a>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
               <div class="checkout_btn_inner float-right">
-                <a class="btn_1" href="#">Continue Shopping</a>
-                <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+                <a class="btn_1 checkout_btn_1" href="/checkout">Proceed to checkout</a>
+                <br />
+                <br />
+                <a class="btn_1" href="/shop">Continue Shopping</a>
               </div>
             </div>
           </div>

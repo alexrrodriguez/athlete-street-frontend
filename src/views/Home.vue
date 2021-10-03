@@ -154,12 +154,12 @@
                 </div>
                 <div class="popular-caption">
                   <h3>
-                    <a href="product_details.html">{{ popular.name }}</a>
+                    <a :href="`/products/${popular.id}`">{{ popular.name }}</a>
                   </h3>
                   <span>$ {{ popular.price }}</span>
-                  <router-link v-bind:to="`/products/${popular.id}`">
+                  <!-- <router-link v-bind:to="`/products/${popular.id}`">
                     <button class="genric-btn info-border">More details</button>
-                  </router-link>
+                  </router-link> -->
                 </div>
               </div>
             </div>

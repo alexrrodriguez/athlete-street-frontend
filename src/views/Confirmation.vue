@@ -139,6 +139,8 @@
                   </tfoot>
                 </table>
               </div>
+              <br />
+              <a class="btn_1" href="/shop">Continue Shopping</a>
             </div>
           </div>
         </div>
