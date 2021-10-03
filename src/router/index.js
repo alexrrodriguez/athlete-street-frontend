@@ -2,7 +2,9 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Shop from "../views/Shop.vue";
-import ProductsShow from "../views/ProductsShow.vue";
+import Checkout from "../views/Checkout.vue";
+import Confirmation from "../views/Confirmation.vue";
+import ProductsShow from "../views/Checkout.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
@@ -27,6 +29,16 @@ const routes = [
     path: "/cart",
     name: "Cart",
     component: Cart,
+  },
+  {
+    path: "/checkout",
+    name: "Checkout",
+    component: Checkout,
+  },
+  {
+    path: "/confirmation",
+    name: "Confirmation",
+    component: Confirmation,
   },
   {
     path: "/orders",
