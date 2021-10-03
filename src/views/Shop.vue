@@ -85,7 +85,9 @@
                 <div v-for="product in products" v-bind:key="product.id" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                   <div class="single-popular-items mb-50 text-center">
                     <div class="popular-img">
-                      <img class="home-img" :src="product.image_url" :alt="product.name" />
+                      <a :href="`/products/${product.id}`">
+                        <img class="home-img" :src="product.image_url" :alt="product.name" />
+                      </a>
                       <div class="img-cap">
                         <span>Add To Cart</span>
                       </div>
@@ -98,9 +100,6 @@
                         <a :href="`/products/${product.id}`">{{ product.name }}</a>
                       </h3>
                       <span>$ {{ product.price }}</span>
-                      <!-- <router-link v-bind:to="`/products/${product.id}`">
-                        <button class="genric-btn info-border">More details</button>
-                      </router-link> -->
                     </div>
                   </div>
                 </div>

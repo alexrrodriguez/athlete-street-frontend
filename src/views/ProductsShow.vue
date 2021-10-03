@@ -48,6 +48,9 @@
                   <div class="add_to_cart">
                     <a href="/cart" class="btn_3">add to cart</a>
                   </div>
+                  <div class="add_to_cart">
+                    <a href="/shop" class="btn_3">Back</a>
+                  </div>
                 </div>
               </div>
             </div>
