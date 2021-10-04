@@ -58,10 +58,24 @@
                     </li>
                   </ul>
                 </div>
-              </div>
-              <!-- Mobile Menu -->
-              <div class="col-12">
-                <div class="mobile_menu d-block d-lg-none"></div>
+                <!-- Mobile Menu -->
+                <div class="col-12">
+                  <div class="mobile_menu d-block d-lg-none">
+                    <a class="mobile-nav" href="/">Home</a>
+                    |
+                    <a class="mobile-nav" href="/shop">Shop</a>
+                    |
+                    <a class="mobile-nav" href="/cart">Cart</a>
+                    |
+                    <a class="mobile-nav" href="/orders">Orders</a>
+                    |
+                    <a class="mobile-nav" href="/about">About</a>
+                    |
+                    <a class="mobile-nav" href="/contact">Contact</a>
+                    |
+                    <a v-if="isLoggedIn()" class="mobile-nav" href="/logout">Logout</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -208,7 +222,14 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.mobile-nav {
+  color: black;
+}
+.mobile-nav:hover {
+  color: red;
+}
+</style>
 
 <script>
 export default {

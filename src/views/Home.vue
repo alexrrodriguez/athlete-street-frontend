@@ -56,37 +56,19 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div v-for="popular in populars" v-bind:key="popular.id" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-new-pro mb-30 text-center">
-                <div class="product-img">
-                  <img src="assets/img/gallery/addidas-women-shoe.jpg" alt="" />
-                </div>
-                <div class="product-caption">
-                  <h3><a href="product_details.html">Nike Women's Flex Experience 9 Running Shoes</a></h3>
-                  <span>$ 25.99</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <div class="single-new-pro mb-30 text-center">
-                <div class="product-img">
-                  <img src="assets/img/gallery/addidas-men-shoe.jpg" alt="" />
-                </div>
-                <div class="product-caption">
-                  <h3><a href="product_details.html">RUNFALCON 2.0 SHOES</a></h3>
-                  <span>$ 42.00</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <div class="single-new-pro mb-30 text-center">
-                <div class="product-img">
-                  <img src="assets/img/gallery/addidas-women-shoe2.webp" alt="" />
-                </div>
-                <div class="product-caption">
-                  <h3><a href="product_details.html">Pacer Future Women's Sneakers</a></h3>
-                  <span>$ 70.00</span>
-                </div>
+                <a :href="`/products/${popular.id}`">
+                  <div class="product-img">
+                    <img :src="popular.image_url" :alt="popular.name" />
+                  </div>
+                  <div class="product-caption">
+                    <h3>
+                      <a href="product_details.html">{{ popular.name }}</a>
+                    </h3>
+                    <span>$ {{ popular.price }}</span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -98,38 +80,46 @@
         <div class="container-fluid p-0 fix">
           <div class="row">
             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6">
-              <div class="single-gallery mb-30">
-                <div
-                  class="gallery-img big-img"
-                  style="background-image: url(assets/img/gallery/nike-womens-shoe-1.jpeg)"
-                ></div>
-              </div>
+              <a :href="`/products/22`">
+                <div class="single-gallery mb-30">
+                  <div
+                    class="gallery-img big-img"
+                    style="background-image: url(assets/img/gallery/nike-womens-shoe-1.jpeg)"
+                  ></div>
+                </div>
+              </a>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-              <div class="single-gallery mb-30">
-                <div
-                  class="gallery-img big-img"
-                  style="background-image: url(assets/img/gallery/nike-mens-shoe1.jpeg)"
-                ></div>
-              </div>
+              <a :href="`/products/21`">
+                <div class="single-gallery mb-30">
+                  <div
+                    class="gallery-img big-img"
+                    style="background-image: url(assets/img/gallery/nike-mens-shoe1.jpeg)"
+                  ></div>
+                </div>
+              </a>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-12">
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
-                  <div class="single-gallery mb-30">
-                    <div
-                      class="gallery-img small-img"
-                      style="background-image: url(assets/img/gallery/puma-womens-shoe.jpeg)"
-                    ></div>
-                  </div>
+                  <a :href="`/products/34`">
+                    <div class="single-gallery mb-30">
+                      <div
+                        class="gallery-img small-img"
+                        style="background-image: url(assets/img/gallery/puma-womens-shoe.jpeg)"
+                      ></div>
+                    </div>
+                  </a>
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
-                  <div class="single-gallery mb-30">
-                    <div
-                      class="gallery-img small-img"
-                      style="background-image: url(assets/img/gallery/addidas-mens-shoe3.jpeg)"
-                    ></div>
-                  </div>
+                  <a :href="`/products/26`">
+                    <div class="single-gallery mb-30">
+                      <div
+                        class="gallery-img small-img"
+                        style="background-image: url(assets/img/gallery/addidas-mens-shoe3.jpeg)"
+                      ></div>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -145,10 +135,7 @@
             <div class="col-xl-7 col-lg-8 col-md-10">
               <div class="section-tittle mb-70 text-center">
                 <h2>Popular Items</h2>
-                <p>
-                  Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                  ipsum suspendisse ultrices gravida.
-                </p>
+                <p>Shop some of todays most popular athletic wear.</p>
               </div>
             </div>
           </div>
@@ -214,34 +201,34 @@
           <div class="row align-items-center justify-content-between padding-130">
             <div class="col-lg-5 col-md-6">
               <div class="watch-details mb-40">
-                <h2>Watch of Choice</h2>
+                <h2>Mens Athletic Wear</h2>
                 <p>
                   Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
                 </p>
-                <a href="shop.html" class="btn">Show Watches</a>
+                <a href="/shop" class="btn">Shop Mens</a>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-10">
               <div class="choice-watch-img mb-40">
-                <img src="assets/img/gallery/choce_watch1.png" alt="" />
+                <img src="assets/img/gallery/nike-mens-shoe1.jpeg" alt="" />
               </div>
             </div>
           </div>
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-6 col-md-6 col-sm-10">
               <div class="choice-watch-img mb-40">
-                <img src="assets/img/gallery/choce_watch2.png" alt="" />
+                <img src="assets/img/gallery/addidas-women-shoe.jpg" alt="" />
               </div>
             </div>
             <div class="col-lg-5 col-md-6">
               <div class="watch-details mb-40">
-                <h2>Watch of Choice</h2>
+                <h2>Womens Athletic Wear</h2>
                 <p>
                   Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
                 </p>
-                <a href="shop.html" class="btn">Show Watches</a>
+                <a href="/shop" class="btn">Shop Womens</a>
               </div>
             </div>
           </div>
@@ -277,6 +264,7 @@ export default {
   data: function () {
     return {
       populars: [],
+      highlights: [],
     };
   },
   created: function () {
@@ -287,6 +275,12 @@ export default {
       axios.get("/popular").then((response) => {
         console.log("popular products index", response);
         this.populars = response.data;
+      });
+    },
+    highlightProducts: function () {
+      axios.get("/highlight").then((response) => {
+        console.log("highlight products index", response);
+        this.highlights = response.data;
       });
     },
   },

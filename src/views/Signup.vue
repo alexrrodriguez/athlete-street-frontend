@@ -132,7 +132,7 @@
   color: blue;
 }
 .signup-login-link:hover {
-  color: rgb(50, 173, 215);
+  color: red;
 }
 </style>
 
