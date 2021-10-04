@@ -1,5 +1,17 @@
 <template>
   <div class="shop">
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+      <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+          <div class="preloader-circle"></div>
+          <div class="preloader-img pere-text">
+            <img src="assets/img/logo/athlete-street.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader Start -->
     <main>
       <!-- Hero Area Start-->
       <div class="slider-area">
@@ -68,10 +80,10 @@
               <form action="#">
                 <div class="select-itms">
                   <select name="select" id="select1">
-                    <option value="">40 per page</option>
-                    <option value="">50 per page</option>
-                    <option value="">60 per page</option>
-                    <option value="">70 per page</option>
+                    <option value="">12 per page</option>
+                    <option value="">24 per page</option>
+                    <option value="">36 per page</option>
+                    <option value="">48 per page</option>
                   </select>
                 </div>
               </form>
@@ -89,7 +101,9 @@
                         <img class="home-img" :src="product.image_url" :alt="product.name" />
                       </a>
                       <div class="img-cap">
-                        <span>Add To Cart</span>
+                        <a :href="`/products/${product.id}`">
+                          <span>Add To Cart</span>
+                        </a>
                       </div>
                       <div class="favorit-items">
                         <span class="flaticon-heart"></span>

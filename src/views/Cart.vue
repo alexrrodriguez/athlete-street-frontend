@@ -1,5 +1,17 @@
 <template>
   <div class="cart-index">
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+      <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+          <div class="preloader-circle"></div>
+          <div class="preloader-img pere-text">
+            <img src="assets/img/logo/athlete-street.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader Start -->
     <main>
       <!-- Hero Area Start-->
       <div class="slider-area">
@@ -15,8 +27,16 @@
           </div>
         </div>
       </div>
+      <section v-if="!isLoggedIn()" class="cart_area section_padding">
+        <div class="container login-container">
+          <h1>
+            <a class="signup-login-link" href="/login">Login</a>
+            to view cart!
+          </h1>
+        </div>
+      </section>
       <!--================Cart Area =================-->
-      <section class="cart_area section_padding">
+      <section v-if="isLoggedIn()" class="cart_area section_padding">
         <div class="container">
           <div class="cart_inner" v-for="carted_product in cartedProducts" :key="carted_product.id">
             <div class="table-responsive">
@@ -143,6 +163,12 @@
   </div>
 </template>
 
+<style>
+.login-container {
+  text-align: center;
+}
+</style>
+
 <script>
 import axios from "axios";
 export default {
@@ -160,6 +186,13 @@ export default {
         console.log("carted products index", response);
         this.cartedProducts = response.data;
       });
+    },
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };

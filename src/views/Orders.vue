@@ -1,5 +1,17 @@
 <template>
   <div class="orders-index">
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+      <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+          <div class="preloader-circle"></div>
+          <div class="preloader-img pere-text">
+            <img src="assets/img/logo/athlete-street.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader Start -->
     <main>
       <!-- Hero Area Start-->
       <div class="slider-area">
@@ -15,8 +27,16 @@
           </div>
         </div>
       </div>
+      <section v-if="!isLoggedIn()" class="cart_area section_padding">
+        <div class="container login-container">
+          <h1>
+            <a class="signup-login-link" href="/login">Login</a>
+            to view cart!
+          </h1>
+        </div>
+      </section>
       <!--================ confirmation part start =================-->
-      <section class="confirmation_part section_padding">
+      <section v-if="isLoggedIn()" class="confirmation_part section_padding">
         <div class="container" v-for="order in orders" :key="order.id">
           <div class="row">
             <div class="col-lg-12">
@@ -172,10 +192,6 @@
 </template>
 
 <style>
-.continue-shopping-div {
-}
-.continue-shopping-btn {
-}
 .order-product-link:hover {
   color: lightskyblue;
 }
@@ -198,6 +214,13 @@ export default {
         console.log("orders index", response);
         this.orders = response.data;
       });
+    },
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };

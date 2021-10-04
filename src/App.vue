@@ -23,7 +23,7 @@
                           <li><a href="/shop">Womens</a></li>
                         </ul>
                       </li>
-                      <li v-if="isLoggedIn()">
+                      <li>
                         <a href="/cart">Cart</a>
                         <ul class="submenu">
                           <li><a href="/orders">Orders</a></li>
@@ -32,6 +32,12 @@
                       <li><a href="/about">About</a></li>
                       <li><a href="/contact">Contact</a></li>
                       <li><a v-if="isLoggedIn()" href="/logout">Logout</a></li>
+                      <li v-if="!isLoggedIn()">
+                        <a href="/signup">Signup</a>
+                        <ul class="submenu">
+                          <li><a href="/login">Login</a></li>
+                        </ul>
+                      </li>
                     </ul>
                   </nav>
                 </div>

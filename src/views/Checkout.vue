@@ -1,5 +1,17 @@
 <template>
   <div class="checkout">
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+      <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+          <div class="preloader-circle"></div>
+          <div class="preloader-img pere-text">
+            <img src="assets/img/logo/athlete-street.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader Start -->
     <main>
       <!-- Hero Area Start-->
       <div class="slider-area">
@@ -18,7 +30,7 @@
       <!--================Checkout Area =================-->
       <section class="checkout_area section_padding">
         <div class="container">
-          <div class="returning_customer">
+          <div v-if="!isLoggedIn()" class="returning_customer">
             <div class="check_title">
               <h2>
                 Returning Customer?
@@ -188,18 +200,7 @@
                   <div class="payment_item">
                     <div class="radion_btn">
                       <input type="radio" id="f-option5" name="selector" />
-                      <label for="f-option5">Check payments</label>
-                      <div class="check"></div>
-                    </div>
-                    <p>
-                      Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.
-                    </p>
-                  </div>
-                  <div class="payment_item active">
-                    <div class="radion_btn">
-                      <input type="radio" id="f-option6" name="selector" />
-                      <label for="f-option6">Paypal</label>
-                      <img src="img/product/single-product/card.jpg" alt="" />
+                      <label for="f-option5">E-payment</label>
                       <div class="check"></div>
                     </div>
                     <p>
@@ -222,3 +223,17 @@
     </main>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
