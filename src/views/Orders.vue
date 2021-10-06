@@ -149,8 +149,10 @@
                     </th>
                   </tr>
                   <tr>
-                    <th colspan="3">shipping</th>
-                    <th><span>flat rate: $50.00</span></th>
+                    <th colspan="3">tax</th>
+                    <th>
+                      <span>${{ order.money_math[1] }}</span>
+                    </th>
                   </tr>
                   <tfoot>
                     <tr>

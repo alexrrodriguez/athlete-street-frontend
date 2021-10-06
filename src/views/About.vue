@@ -70,7 +70,7 @@
             <div class="col-lg-12">
               <div class="video-wrap">
                 <div class="play-btn">
-                  <a class="popup-video" href="https://www.youtube.com/watch?v=KMc6DyEJp04">
+                  <a class="popup-video" href="https://www.youtube.com/watch?v=NP7oNGpH-LQ">
                     <i class="fas fa-play"></i>
                   </a>
                 </div>
@@ -80,8 +80,8 @@
           <!-- Arrow -->
           <div class="thumb-content-box">
             <div class="thumb-content">
-              <h3>Next Video</h3>
-              <a href="#"><i class="flaticon-arrow"></i></a>
+              <h3>Browse Products</h3>
+              <a href="/shop"><i class="flaticon-arrow"></i></a>
             </div>
           </div>
         </div>

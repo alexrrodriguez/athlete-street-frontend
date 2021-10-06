@@ -29,7 +29,7 @@
       </div>
       <!--================ confirmation part start =================-->
       <section class="confirmation_part section_padding">
-        <div class="container">
+        <div v-for="order in orders" :key="order.id" class="container">
           <div class="row">
             <div class="col-lg-12">
               <div class="confirmation_tittle">
@@ -42,7 +42,7 @@
                 <ul>
                   <li>
                     <p>order number</p>
-                    <span>: 60235</span>
+                    <span>: {{ order.id }}</span>
                   </li>
                   <li>
                     <p>data</p>
@@ -50,11 +50,11 @@
                   </li>
                   <li>
                     <p>total</p>
-                    <span>: USD 2210</span>
+                    <span>: USD {{ order.money_math[2] }}</span>
                   </li>
                   <li>
                     <p>mayment methord</p>
-                    <span>: Check payments</span>
+                    <span>: E Payment</span>
                   </li>
                 </ul>
               </div>
@@ -119,7 +119,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr v-for="product in order.products" :key="product.id">
+                      <th colspan="2">
+                        <span>{{ product.name }}</span>
+                      </th>
+                      <div v-for="quantity in order.carted_products" :key="quantity.id">
+                        <th v-if="quantity.product_id == product.id">{{ quantity.quantity }}</th>
+                      </div>
+                      <th>
+                        <span>${{ product.price }}</span>
+                      </th>
+                    </tr>
+                    <!-- <tr>
                       <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
                       <th>x02</th>
                       <th><span>$720.00</span></th>
@@ -128,15 +139,18 @@
                       <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
                       <th>x02</th>
                       <th><span>$720.00</span></th>
-                    </tr>
-                    <tr>
-                      <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
-                      <th>x02</th>
-                      <th><span>$720.00</span></th>
-                    </tr>
+                    </tr> -->
                     <tr>
                       <th colspan="3">Subtotal</th>
-                      <th><span>$2160.00</span></th>
+                      <th>
+                        <span>${{ order.money_math[0] }}</span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th colspan="3">Tax</th>
+                      <th>
+                        <span>${{ order.money_math[1] }}</span>
+                      </th>
                     </tr>
                     <tr>
                       <th colspan="3">shipping</th>
@@ -145,8 +159,8 @@
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th scope="col" colspan="3">Quantity</th>
-                      <th scope="col">Total</th>
+                      <th scope="col" colspan="3">Total</th>
+                      <th scope="col">${{ order.money_math[2] }}</th>
                     </tr>
                   </tfoot>
                 </table>
@@ -161,3 +175,32 @@
     </main>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+export default {
+  data: function () {
+    return {
+      orders: [],
+    };
+  },
+  created: function () {
+    this.indexOrders();
+  },
+  methods: {
+    indexOrders: function () {
+      axios.get("/orders").then((response) => {
+        console.log("orders index", response);
+        this.orders = response.data;
+      });
+    },
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>

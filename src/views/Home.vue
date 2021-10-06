@@ -277,12 +277,6 @@ export default {
         this.populars = response.data;
       });
     },
-    highlightProducts: function () {
-      axios.get("/highlight").then((response) => {
-        console.log("highlight products index", response);
-        this.highlights = response.data;
-      });
-    },
   },
 };
 </script>

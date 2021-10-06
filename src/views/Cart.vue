@@ -38,7 +38,7 @@
       <!--================Cart Area =================-->
       <section v-if="isLoggedIn()" class="cart_area section_padding">
         <div class="container">
-          <div class="cart_inner" v-for="carted_product in cartedProducts" :key="carted_product.id">
+          <div class="cart_inner">
             <div class="table-responsive">
               <table class="table">
                 <thead>
@@ -50,7 +50,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr v-for="carted_product in cartedProducts" :key="carted_product.id">
                     <td>
                       <div class="media">
                         <div class="d-flex">
@@ -66,13 +66,16 @@
                     </td>
                     <td>
                       <div class="product_count">
-                        <span class="input-number-decrement"><i class="ti-minus"></i></span>
-                        <input class="input-number" type="text" value="1" min="0" max="10" />
-                        <span class="input-number-increment"><i class="ti-plus"></i></span>
+                        <span class="input-number-decrement minus-icon">
+                          <i class="ti-minus" v-on:click="decrease"></i>
+                        </span>
+                        <!-- <input class="input-number" type="text" v-model="counter" min="0" max="10" /> -->
+                        <h5 class="input-number">{{ carted_product.quantity }}</h5>
+                        <span class="input-number-increment"><i class="ti-plus" v-on:click="increase"></i></span>
                       </div>
                     </td>
                     <td>
-                      <h5>${{ carted_product.product.price }}</h5>
+                      <h5>${{ carted_product.product.total * carted_product.quantity }}</h5>
                     </td>
                   </tr>
                   <tr class="bottom_button">
@@ -80,7 +83,7 @@
                     <td></td>
                     <td>
                       <div class="cupon_text float-right">
-                        <a class="btn_1" href="#">Update Cart</a>
+                        <a class="btn_1" href="/cart">Update Cart</a>
                       </div>
                     </td>
                   </tr>
@@ -135,7 +138,7 @@
                           <option value="4">California</option>
                         </select>
                         <input class="post_code" type="text" placeholder="Postcode/Zipcode" />
-                        <a class="btn_1" href="#">Calculate Shipping</a>
+                        <a class="btn_1" href="/cart">Calculate Shipping</a>
                       </div>
                     </td>
                   </tr>
@@ -175,6 +178,7 @@ export default {
   data: function () {
     return {
       cartedProducts: [],
+      counter: 1,
     };
   },
   created: function () {
@@ -192,6 +196,14 @@ export default {
         return true;
       } else {
         return false;
+      }
+    },
+    increase: function () {
+      this.counter++;
+    },
+    decrease: function () {
+      if (this.counter > 0) {
+        this.counter--;
       }
     },
   },

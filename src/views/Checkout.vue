@@ -1,17 +1,5 @@
 <template>
   <div class="checkout">
-    <!--? Preloader Start -->
-    <div id="preloader-active">
-      <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-inner position-relative">
-          <div class="preloader-circle"></div>
-          <div class="preloader-img pere-text">
-            <img src="assets/img/logo/athlete-street.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Preloader Start -->
     <main>
       <!-- Hero Area Start-->
       <div class="slider-area">
@@ -150,38 +138,24 @@
                   <h2>Your Order</h2>
                   <ul class="list">
                     <li>
-                      <a href="#">
+                      <a>
                         Product
                         <span>Total</span>
                       </a>
                     </li>
-                    <li>
+                    <li v-for="carted_product in cartedProducts" :key="carted_product.id">
                       <a href="#">
-                        Fresh Blackberry
-                        <span class="middle">x 02</span>
-                        <span class="last">$720.00</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        Fresh Tomatoes
-                        <span class="middle">x 02</span>
-                        <span class="last">$720.00</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        Fresh Brocoli
-                        <span class="middle">x 02</span>
-                        <span class="last">$720.00</span>
+                        {{ carted_product.product.name }}
+                        <span class="middle">x {{ carted_product.quantity }}</span>
+                        <span class="last">${{ carted_product.product.price }}</span>
                       </a>
                     </li>
                   </ul>
-                  <ul class="list list_2">
+                  <ul v-for="order in orders" :key="order.id" class="list list_2">
                     <li>
                       <a href="#">
                         Subtotal
-                        <span>$2160.00</span>
+                        <span>${{ order.money_math[0] }}</span>
                       </a>
                     </li>
                     <li>
@@ -192,8 +166,14 @@
                     </li>
                     <li>
                       <a href="#">
+                        Tax
+                        <span>${{ order.money_math[1] }}</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
                         Total
-                        <span>$2210.00</span>
+                        <span>${{ order.money_math[2] }}</span>
                       </a>
                     </li>
                   </ul>
@@ -225,7 +205,18 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
+  data: function () {
+    return {
+      cartedProducts: [],
+      orders: [],
+    };
+  },
+  created: function () {
+    this.indexCart();
+    this.indexOrders();
+  },
   methods: {
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {
@@ -233,6 +224,18 @@ export default {
       } else {
         return false;
       }
+    },
+    indexCart: function () {
+      axios.get("/carted_products").then((response) => {
+        console.log("carted products show", response);
+        this.cartedProducts = response.data;
+      });
+    },
+    indexOrders: function () {
+      axios.get("/orders").then((response) => {
+        console.log("orders index", response);
+        this.orders = response.data;
+      });
     },
   },
 };
