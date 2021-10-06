@@ -94,7 +94,7 @@
                       <h5>Subtotal</h5>
                     </td>
                     <td>
-                      <h5>$42.00</h5>
+                      <h5>$790.00</h5>
                     </td>
                   </tr>
                   <tr class="shipping_area">
