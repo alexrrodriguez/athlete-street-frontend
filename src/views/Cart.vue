@@ -67,15 +67,14 @@
                     <td>
                       <div class="product_count">
                         <span class="input-number-decrement minus-icon">
-                          <i class="ti-minus" v-on:click="decrease"></i>
+                          <i class="ti-minus"></i>
                         </span>
-                        <!-- <input class="input-number" type="text" v-model="counter" min="0" max="10" /> -->
-                        <h5 class="input-number">{{ carted_product.quantity }}</h5>
-                        <span class="input-number-increment"><i class="ti-plus" v-on:click="increase"></i></span>
+                        <input class="input-number" type="text" :value="carted_product.quantity" min="0" max="10" />
+                        <span class="input-number-increment"><i class="ti-plus"></i></span>
                       </div>
                     </td>
                     <td>
-                      <h5>${{ carted_product.product.total * carted_product.quantity }}</h5>
+                      <h5>${{ (carted_product.product.total * carted_product.quantity).toFixed(2) }}</h5>
                     </td>
                   </tr>
                   <tr class="bottom_button">
@@ -94,7 +93,7 @@
                       <h5>Subtotal</h5>
                     </td>
                     <td>
-                      <h5>$790.00</h5>
+                      <h5>${{ subtotal }}</h5>
                     </td>
                   </tr>
                   <tr class="shipping_area">
@@ -118,7 +117,7 @@
                             Flat Rate: $10.00
                             <input type="radio" aria-label="Radio button for following text input" />
                           </li>
-                          <li class="active">
+                          <li>
                             Local Delivery: $2.00
                             <input type="radio" aria-label="Radio button for following text input" />
                           </li>
@@ -179,6 +178,8 @@ export default {
     return {
       cartedProducts: [],
       counter: 1,
+      subtotal: 1,
+      isActive: false,
     };
   },
   created: function () {
@@ -206,6 +207,7 @@ export default {
         this.counter--;
       }
     },
+    toggle: function () {},
   },
 };
 </script>

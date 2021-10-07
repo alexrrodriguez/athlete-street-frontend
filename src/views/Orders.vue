@@ -54,15 +54,15 @@
                   </li>
                   <li>
                     <p>subtotal</p>
-                    <span>: ${{ order.money_math[0] }}</span>
+                    <span>: ${{ (order.money_math[0] * 1).toFixed(2) }}</span>
                   </li>
                   <li>
                     <p>tax</p>
-                    <span>: ${{ order.money_math[1] }}</span>
+                    <span>: ${{ (order.money_math[1] * 1).toFixed(2) }}</span>
                   </li>
                   <li>
                     <p>total</p>
-                    <span>: ${{ order.money_math[2] }}</span>
+                    <span>: ${{ (order.money_math[2] * 1).toFixed(2) }}</span>
                   </li>
                 </ul>
               </div>
@@ -123,7 +123,7 @@
                     <tr>
                       <th scope="col" colspan="2">Product</th>
                       <th scope="col">Quantity</th>
-                      <th scope="col">Total</th>
+                      <th scope="col">Price</th>
                     </tr>
                   </thead>
                   <tbody v-for="product in order.products" :key="product.id">
@@ -138,26 +138,26 @@
                       </div>
 
                       <th>
-                        <span>${{ product.price }}</span>
+                        <span>${{ (product.price * 1).toFixed(2) }}</span>
                       </th>
                     </tr>
                   </tbody>
                   <tr>
                     <th colspan="3">Subtotal</th>
                     <th>
-                      <span>${{ order.money_math[0] }}</span>
+                      <span>${{ (order.money_math[0] * 1).toFixed(2) }}</span>
                     </th>
                   </tr>
                   <tr>
                     <th colspan="3">tax</th>
                     <th>
-                      <span>${{ order.money_math[1] }}</span>
+                      <span>${{ (order.money_math[1] * 1).toFixed(2) }}</span>
                     </th>
                   </tr>
                   <tfoot>
                     <tr>
                       <th scope="col" colspan="3">Total</th>
-                      <th scope="col">${{ order.money_math[2] }}</th>
+                      <th scope="col">${{ (order.money_math[2] * 1).toFixed(2) }}</th>
                     </tr>
                   </tfoot>
                 </table>
