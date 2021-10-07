@@ -57,7 +57,11 @@
                           <img :src="carted_product.product.image_url" :alt="carted_product.product.name" />
                         </div>
                         <div class="media-body">
-                          <p>{{ carted_product.product.name }}</p>
+                          <a :href="`/products/${carted_product.product.id}`">
+                            <p>
+                              {{ carted_product.product.name }}
+                            </p>
+                          </a>
                         </div>
                       </div>
                     </td>
@@ -93,7 +97,7 @@
                       <h5>Subtotal</h5>
                     </td>
                     <td>
-                      <h5>${{ subtotal }}</h5>
+                      <h5>$790.00</h5>
                     </td>
                   </tr>
                   <tr class="shipping_area">
@@ -155,13 +159,6 @@
       </section>
       <!--================End Cart Area =================-->
     </main>
-    <!-- <h1>Users Carted Products</h1>
-    <div v-for="carted_product in cartedProducts" :key="carted_product.id">
-      <img :src="carted_product.product.image_url" alt="" />
-      <h1>{{ carted_product.product.name }}</h1>
-      <p>{{ carted_product.product.price }}</p>
-      <router-link v-bind:to="`/products/${carted_product.product.id}`">More details</router-link>
-    </div> -->
   </div>
 </template>
 
@@ -177,9 +174,6 @@ export default {
   data: function () {
     return {
       cartedProducts: [],
-      counter: 1,
-      subtotal: 1,
-      isActive: false,
     };
   },
   created: function () {
@@ -199,15 +193,6 @@ export default {
         return false;
       }
     },
-    increase: function () {
-      this.counter++;
-    },
-    decrease: function () {
-      if (this.counter > 0) {
-        this.counter--;
-      }
-    },
-    toggle: function () {},
   },
 };
 </script>

@@ -50,7 +50,7 @@
                   </li>
                   <li>
                     <p>total</p>
-                    <span>: USD {{ order.money_math[2] }}</span>
+                    <span>: USD {{ (order.money_math[2] * 1).toFixed(2) }}</span>
                   </li>
                   <li>
                     <p>mayment methord</p>
@@ -115,7 +115,7 @@
                     <tr>
                       <th scope="col" colspan="2">Product</th>
                       <th scope="col">Quantity</th>
-                      <th scope="col">Total</th>
+                      <th scope="col">Price</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -124,32 +124,22 @@
                         <span>{{ product.name }}</span>
                       </th>
                       <div v-for="quantity in order.carted_products" :key="quantity.id">
-                        <th v-if="quantity.product_id == product.id">{{ quantity.quantity }}</th>
+                        <th v-if="quantity.product_id == product.id">X{{ quantity.quantity }}</th>
                       </div>
                       <th>
-                        <span>${{ product.price }}</span>
+                        <span>${{ (product.total * 1).toFixed(2) }}</span>
                       </th>
                     </tr>
-                    <!-- <tr>
-                      <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
-                      <th>x02</th>
-                      <th><span>$720.00</span></th>
-                    </tr>
-                    <tr>
-                      <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
-                      <th>x02</th>
-                      <th><span>$720.00</span></th>
-                    </tr> -->
                     <tr>
                       <th colspan="3">Subtotal</th>
                       <th>
-                        <span>${{ order.money_math[0] }}</span>
+                        <span>${{ (order.money_math[0] * 1).toFixed(2) }}</span>
                       </th>
                     </tr>
                     <tr>
                       <th colspan="3">Tax</th>
                       <th>
-                        <span>${{ order.money_math[1] }}</span>
+                        <span>${{ (order.money_math[1] * 1).toFixed(2) }}</span>
                       </th>
                     </tr>
                     <tr>
@@ -160,7 +150,7 @@
                   <tfoot>
                     <tr>
                       <th scope="col" colspan="3">Total</th>
-                      <th scope="col">${{ order.money_math[2] }}</th>
+                      <th scope="col">${{ (order.money_math[2] * 1).toFixed(2) }}</th>
                     </tr>
                   </tfoot>
                 </table>

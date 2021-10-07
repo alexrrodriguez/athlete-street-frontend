@@ -84,9 +84,9 @@
                   </div>
                   <div class="col-md-12 form-group p_star">
                     <select class="country_select">
-                      <option value="1">Country</option>
-                      <option value="2">Country</option>
-                      <option value="4">Country</option>
+                      <option value="1">USA</option>
+                      <option value="2">UK</option>
+                      <option value="4">India</option>
                     </select>
                   </div>
                   <div class="col-md-12 form-group p_star">
@@ -103,9 +103,9 @@
                   </div>
                   <div class="col-md-12 form-group p_star">
                     <select class="country_select">
-                      <option value="1">District</option>
-                      <option value="2">District</option>
-                      <option value="4">District</option>
+                      <option value="1">District 1</option>
+                      <option value="2">District 2</option>
+                      <option value="4">District 3</option>
                     </select>
                   </div>
                   <div class="col-md-12 form-group">
@@ -145,9 +145,11 @@
                     </li>
                     <li v-for="carted_product in cartedProducts" :key="carted_product.id">
                       <a href="#">
-                        {{ carted_product.product.name }}
-                        <span class="middle">x {{ carted_product.quantity }}</span>
-                        <span class="last">${{ carted_product.product.price }}</span>
+                        {{ carted_product.product.name }} X{{ carted_product.quantity }}
+                        <!-- <span class="middle">x {{}}</span> -->
+                        <span class="last">
+                          ${{ (carted_product.product.price * carted_product.quantity).toFixed(2) }}
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -155,7 +157,7 @@
                     <li>
                       <a href="#">
                         Subtotal
-                        <span>${{ order.money_math[0] }}</span>
+                        <span>${{ (order.money_math[0] * 1).toFixed(2) }}</span>
                       </a>
                     </li>
                     <li>
@@ -167,13 +169,13 @@
                     <li>
                       <a href="#">
                         Tax
-                        <span>${{ order.money_math[1] }}</span>
+                        <span>${{ (order.money_math[1] * 1).toFixed(2) }}</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         Total
-                        <span>${{ order.money_math[2] }}</span>
+                        <span>${{ (order.money_math[2] * 1).toFixed(2) }}</span>
                       </a>
                     </li>
                   </ul>
