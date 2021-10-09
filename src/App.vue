@@ -18,10 +18,6 @@
                       <li><a href="/">Home</a></li>
                       <li>
                         <a href="/shop">Shop</a>
-                        <ul class="submenu">
-                          <li><a href="/shop">Mens</a></li>
-                          <li><a href="/shop">Womens</a></li>
-                        </ul>
                       </li>
                       <li>
                         <a href="/cart">Cart</a>

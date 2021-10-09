@@ -122,7 +122,11 @@
             <!-- Card two -->
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               <div class="row">
-                <div v-for="product in products" v-bind:key="product.id" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div
+                  v-for="product in maleProducts"
+                  v-bind:key="product.id"
+                  class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
+                >
                   <div class="single-popular-items mb-50 text-center">
                     <div class="popular-img">
                       <a :href="`/products/${product.id}`">
@@ -150,7 +154,11 @@
             <!-- Card three -->
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
               <div class="row">
-                <div v-for="product in products" v-bind:key="product.id" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div
+                  v-for="product in femaleProducts"
+                  v-bind:key="product.id"
+                  class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
+                >
                   <div class="single-popular-items mb-50 text-center">
                     <div class="popular-img">
                       <a :href="`/products/${product.id}`">
@@ -201,16 +209,32 @@ export default {
   data: function () {
     return {
       products: [],
+      maleProducts: [],
+      femaleProducts: [],
     };
   },
   created: function () {
     this.indexProducts();
+    this.indexMaleProducts();
+    this.indexFemaleProducts();
   },
   methods: {
     indexProducts: function () {
       axios.get("/products").then((response) => {
         console.log("products index", response);
         this.products = response.data;
+      });
+    },
+    indexMaleProducts: function () {
+      axios.get("/male").then((response) => {
+        console.log("male products index", response);
+        this.maleProducts = response.data;
+      });
+    },
+    indexFemaleProducts: function () {
+      axios.get("/female").then((response) => {
+        console.log("female products index", response);
+        this.femaleProducts = response.data;
       });
     },
   },
