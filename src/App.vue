@@ -135,10 +135,10 @@
                   <div class="footer-tittle">
                     <h4>Quick Links</h4>
                     <ul>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Offers & Discounts</a></li>
-                      <li><a href="#">Get Coupon</a></li>
-                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="/">Home</a></li>
+                      <li><a href="/shop">Shop</a></li>
+                      <li><a href="/about">About</a></li>
+                      <li><a href="/contact">Contact Us</a></li>
                     </ul>
                   </div>
                 </div>
@@ -148,10 +148,10 @@
                   <div class="footer-tittle">
                     <h4>New Products</h4>
                     <ul>
-                      <li><a href="#">Woman Cloth</a></li>
-                      <li><a href="#">Fashion Accessories</a></li>
-                      <li><a href="#">Man Accessories</a></li>
-                      <li><a href="#">Rubber made Toys</a></li>
+                      <li><a href="/shop">New Products</a></li>
+                      <li><a href="/shop">Shop Woman</a></li>
+                      <li><a href="/shop">Shop Men</a></li>
+                      <li><a href="/shop">Sale</a></li>
                     </ul>
                   </div>
                 </div>
@@ -161,10 +161,10 @@
                   <div class="footer-tittle">
                     <h4>Support</h4>
                     <ul>
-                      <li><a href="#">Frequently Asked Questions</a></li>
-                      <li><a href="#">Terms & Conditions</a></li>
-                      <li><a href="#">Privacy Policy</a></li>
-                      <li><a href="#">Report a Payment Issue</a></li>
+                      <li><a href="/about">Frequently Asked Questions</a></li>
+                      <li><a href="/contact">Terms & Conditions</a></li>
+                      <li><a href="/contact">Privacy Policy</a></li>
+                      <li><a href="/contact">Report a Payment Issue</a></li>
                     </ul>
                   </div>
                 </div>
