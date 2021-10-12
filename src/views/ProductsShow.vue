@@ -50,7 +50,7 @@
                     <p>${{ (product.price * counter).toFixed(2) }}</p>
                   </div>
                   <div class="add_to_cart">
-                    <a href="/cart" class="btn_3">add to cart</a>
+                    <a href="/cart" v-on:click="cartProduct()" class="btn_3">add to cart</a>
                   </div>
                   <div class="add_to_cart">
                     <a href="/shop" class="btn_3">Continue Shopping</a>
@@ -98,6 +98,7 @@ export default {
       product: {},
       image: {},
       counter: 1,
+      newProductParams: {},
     };
   },
   created: function () {
@@ -109,6 +110,14 @@ export default {
         console.log("products show", response);
         this.product = response.data;
         this.image = response.data.image_url;
+      });
+    },
+    cartProduct: function () {
+      this.newProductParams.product_id = this.product.id;
+      this.newProductParams.quantity = this.counter;
+      axios.post("/carted_products", this.newProductParams).then((response) => {
+        console.log("carted products create", response);
+        this.$router.push("/cart");
       });
     },
     showSupplier: function () {
