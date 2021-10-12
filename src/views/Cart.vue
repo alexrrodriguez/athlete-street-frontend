@@ -47,6 +47,7 @@
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Total</th>
+                    <th scope="col">Total</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -76,6 +77,9 @@
                         <input class="input-number" type="text" :value="carted_product.quantity" min="0" max="10" />
                         <span class="input-number-increment"><i class="ti-plus"></i></span>
                       </div>
+                    </td>
+                    <td>
+                      <button class="genric-btn danger radius">Remove</button>
                     </td>
                     <td>
                       <h5>${{ (carted_product.product.total * carted_product.quantity).toFixed(2) }}</h5>
@@ -142,17 +146,24 @@
                         </select>
                         <input class="post_code" type="text" placeholder="Postcode/Zipcode" />
                         <a class="btn_1" href="/cart">Calculate Shipping</a>
+                        <br />
+                        <hr />
+                        <br />
+                        <a class="btn_1 checkout_btn_1" href="/checkout">Proceed to checkout</a>
+                        <br />
+                        <br />
+                        <a class="btn_1" href="/shop">Continue Shopping</a>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <div class="checkout_btn_inner float-right">
+              <!-- <div class="checkout_btn_inner float-right">
                 <a class="btn_1 checkout_btn_1" href="/checkout">Proceed to checkout</a>
                 <br />
                 <br />
                 <a class="btn_1" href="/shop">Continue Shopping</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
