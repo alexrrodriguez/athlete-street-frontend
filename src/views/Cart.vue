@@ -117,25 +117,22 @@
                         <ul class="list">
                           <li>
                             Flat Rate: $5.00
-                            <input type="radio" aria-label="Radio button for following text input" />
+                            <input type="checkbox" id="primary-radio" />
                           </li>
                           <li>
                             Free Shipping
-                            <input type="radio" aria-label="Radio button for following text input" />
+                            <input type="checkbox" id="primary-radio" checked />
                           </li>
                           <li>
                             Flat Rate: $10.00
-                            <input type="radio" aria-label="Radio button for following text input" />
+                            <input type="checkbox" id="primary-radio" />
                           </li>
                           <li>
                             Local Delivery: $2.00
-                            <input type="radio" aria-label="Radio button for following text input" />
+                            <input type="checkbox" id="primary-radio" />
                           </li>
                         </ul>
-                        <h6>
-                          Calculate Shipping
-                          <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </h6>
+                        <br />
                         <select class="shipping_select">
                           <option value="1">USA</option>
                           <option value="2">UK</option>
@@ -147,8 +144,6 @@
                           <option value="4">California</option>
                         </select>
                         <input class="post_code" type="text" placeholder="Postcode/Zipcode" />
-                        <a class="btn_1" href="/cart">Calculate Shipping</a>
-                        <br />
                         <hr />
                         <br />
                         <a class="btn_1 checkout_btn_1" href="/checkout">Proceed to checkout</a>
@@ -190,6 +185,7 @@ export default {
   data: function () {
     return {
       cartedProducts: [],
+      country: "",
     };
   },
   created: function () {
@@ -200,6 +196,7 @@ export default {
       axios.get("/carted_products").then((response) => {
         console.log("carted products index", response);
         this.cartedProducts = response.data;
+        console.log(this.country);
       });
     },
     destroyCartedProduct: function (carted_product) {
