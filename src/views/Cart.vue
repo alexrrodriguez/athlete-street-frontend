@@ -45,8 +45,8 @@
                   <tr>
                     <th scope="col">Product</th>
                     <th scope="col">Price</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Total</th>
+                    <th class="remove-button" scope="col">Quantity</th>
+                    <th scope="col"></th>
                     <th scope="col">Total</th>
                   </tr>
                 </thead>
@@ -78,8 +78,10 @@
                         <span class="input-number-increment"><i class="ti-plus"></i></span>
                       </div>
                     </td>
-                    <td>
-                      <button class="genric-btn danger radius">Remove</button>
+                    <td class="remove-button">
+                      <button v-on:click="destroyCartedProduct(carted_product)" class="genric-btn danger radius">
+                        Remove
+                      </button>
                     </td>
                     <td>
                       <h5>${{ (carted_product.product.total * carted_product.quantity).toFixed(2) }}</h5>
@@ -174,6 +176,9 @@
 </template>
 
 <style>
+.remove-button {
+  text-align: center;
+}
 .login-container {
   text-align: center;
 }
@@ -195,6 +200,12 @@ export default {
       axios.get("/carted_products").then((response) => {
         console.log("carted products index", response);
         this.cartedProducts = response.data;
+      });
+    },
+    destroyCartedProduct: function (carted_product) {
+      axios.delete("/carted_products/" + carted_product.id).then((response) => {
+        console.log("carted product destroy", response);
+        window.location.reload();
       });
     },
     isLoggedIn: function () {
