@@ -29,7 +29,7 @@
       </div>
       <!--================ confirmation part start =================-->
       <section class="confirmation_part section_padding">
-        <div v-for="order in orders" :key="order.id" class="container">
+        <div class="container">
           <div class="row">
             <div class="col-lg-12">
               <div class="confirmation_tittle">
@@ -42,7 +42,7 @@
                 <ul>
                   <li>
                     <p>order number</p>
-                    <span>: {{ order.id }}</span>
+                    <span>: {{ lastOrder.id }}</span>
                   </li>
                   <li>
                     <p>data</p>
@@ -50,7 +50,7 @@
                   </li>
                   <li>
                     <p>total</p>
-                    <span>: USD {{ (order.money_math[2] * 1).toFixed(2) }}</span>
+                    <span>: USD {{ (total * 1).toFixed(2) }}</span>
                   </li>
                   <li>
                     <p>mayment methord</p>
@@ -119,38 +119,38 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="product in order.products" :key="product.id">
+                    <tr v-for="product in lastOrder.products" :key="product.id">
                       <th colspan="2">
                         <span>{{ product.name }}</span>
                       </th>
-                      <div v-for="quantity in order.carted_products" :key="quantity.id">
+                      <div v-for="quantity in lastOrder.carted_products" :key="quantity.id">
                         <th v-if="quantity.product_id == product.id">X{{ quantity.quantity }}</th>
                       </div>
                       <th>
-                        <span>${{ (product.total * 1).toFixed(2) }}</span>
+                        <span>${{ (product.price * 1).toFixed(2) }}</span>
                       </th>
                     </tr>
                     <tr>
                       <th colspan="3">Subtotal</th>
                       <th>
-                        <span>${{ (order.money_math[0] * 1).toFixed(2) }}</span>
+                        <span>${{ (subtotal * 1).toFixed(2) }}</span>
                       </th>
                     </tr>
                     <tr>
                       <th colspan="3">Tax</th>
                       <th>
-                        <span>${{ (order.money_math[1] * 1).toFixed(2) }}</span>
+                        <span>${{ (tax * 1).toFixed(2) }}</span>
                       </th>
                     </tr>
                     <tr>
                       <th colspan="3">shipping</th>
-                      <th><span>flat rate: $50.00</span></th>
+                      <th><span>free shipping: $0.00</span></th>
                     </tr>
                   </tbody>
                   <tfoot>
                     <tr>
                       <th scope="col" colspan="3">Total</th>
-                      <th scope="col">${{ (order.money_math[2] * 1).toFixed(2) }}</th>
+                      <th scope="col">${{ (total * 1).toFixed(2) }}</th>
                     </tr>
                   </tfoot>
                 </table>
@@ -172,6 +172,10 @@ export default {
   data: function () {
     return {
       orders: [],
+      lastOrder: [],
+      subtotal: 0,
+      tax: 0,
+      total: 0,
     };
   },
   created: function () {
@@ -181,7 +185,16 @@ export default {
     indexOrders: function () {
       axios.get("/orders").then((response) => {
         console.log("orders index", response);
+        console.log("orders count", response.data.length);
         this.orders = response.data;
+        this.lastOrder = response.data[response.data.length - 1];
+        console.log("last order", this.lastOrder);
+        this.subtotal = response.data[response.data.length - 1].money_math[0];
+        console.log(this.subtotal);
+        this.tax = response.data[response.data.length - 1].money_math[1];
+        console.log(this.tax);
+        this.total = response.data[response.data.length - 1].money_math[2];
+        console.log(this.total);
       });
     },
     isLoggedIn: function () {
