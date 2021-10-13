@@ -157,25 +157,25 @@
                     <li>
                       <a href="#">
                         Subtotal
-                        <span>${{ (order.money_math[0] * 1).toFixed(2) }}</span>
+                        <span>${{ (subtotal * 1).toFixed(2) }}</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         Shipping
-                        <span>Flat rate: $50.00</span>
+                        <span>Free Shipping: $0.00</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         Tax
-                        <span>${{ (order.money_math[1] * 1).toFixed(2) }}</span>
+                        <span>${{ (tax * 1).toFixed(2) }}</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         Total
-                        <span>${{ (order.money_math[2] * 1).toFixed(2) }}</span>
+                        <span>${{ (total * 1).toFixed(2) }}</span>
                       </a>
                     </li>
                   </ul>
@@ -213,6 +213,9 @@ export default {
     return {
       cartedProducts: [],
       orders: [],
+      subtotal: 0,
+      tax: 0,
+      total: 0,
     };
   },
   created: function () {
@@ -231,6 +234,13 @@ export default {
       axios.get("/carted_products").then((response) => {
         console.log("carted products show", response);
         this.cartedProducts = response.data;
+        this.cartedProducts.forEach((carted_total, i) => {
+          console.log(carted_total);
+          console.log(i);
+          this.tax += carted_total.product.tax * carted_total.quantity;
+          this.subtotal += carted_total.product.price * carted_total.quantity;
+          this.total += carted_total.product.total * carted_total.quantity;
+        });
       });
     },
     indexOrders: function () {

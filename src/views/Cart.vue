@@ -84,7 +84,7 @@
                       </button>
                     </td>
                     <td>
-                      <h5>${{ (carted_product.product.total * carted_product.quantity).toFixed(2) }}</h5>
+                      <h5>${{ (carted_product.product.price * carted_product.quantity).toFixed(2) }}</h5>
                     </td>
                   </tr>
                   <tr class="bottom_button">
@@ -103,7 +103,7 @@
                       <h5>Subtotal</h5>
                     </td>
                     <td>
-                      <h5>$790.00</h5>
+                      <h5>${{ (total * 1).toFixed(2) }}</h5>
                     </td>
                   </tr>
                   <tr class="shipping_area">
@@ -186,6 +186,7 @@ export default {
     return {
       cartedProducts: [],
       country: "",
+      total: 0,
     };
   },
   created: function () {
@@ -196,7 +197,11 @@ export default {
       axios.get("/carted_products").then((response) => {
         console.log("carted products index", response);
         this.cartedProducts = response.data;
-        console.log(this.country);
+        this.cartedProducts.forEach((carted_total, i) => {
+          console.log(carted_total);
+          console.log(i);
+          this.total += carted_total.product.price * carted_total.quantity;
+        });
       });
     },
     destroyCartedProduct: function (carted_product) {
