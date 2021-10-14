@@ -192,9 +192,9 @@
                   <div class="creat_account">
                     <input type="checkbox" id="f-option4" name="selector" />
                     <label for="f-option4">I’ve read and accept the</label>
-                    <a href="#">terms & conditions*</a>
+                    <a href="/checkout">terms & conditions*</a>
                   </div>
-                  <a class="btn_3" v-on:click="createOrder()">Confirm Checkout</a>
+                  <a class="btn_3 order-product-link confirm-btn" v-on:click="createOrder()">Confirm Checkout</a>
                 </div>
               </div>
             </div>
@@ -205,6 +205,15 @@
     </main>
   </div>
 </template>
+
+<style>
+.confirm-btn {
+  color: blue !important;
+}
+.confirm-btn:hover {
+  color: white !important;
+}
+</style>
 
 <script>
 import axios from "axios";
