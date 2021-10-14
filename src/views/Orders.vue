@@ -37,13 +37,13 @@
       </section>
       <!--================ confirmation part start =================-->
       <section v-if="isLoggedIn()" class="confirmation_part section_padding">
+        <div class="col-lg-12">
+          <div class="confirmation_tittle">
+            <span>Review past orders below.</span>
+          </div>
+        </div>
         <div class="container" v-for="order in orders" :key="order.id">
           <div class="row">
-            <div class="col-lg-12">
-              <div class="confirmation_tittle">
-                <span>Review past orders below.</span>
-              </div>
-            </div>
             <div class="col-lg-6 col-lx-4">
               <div class="single_confirmation_details">
                 <h4>order info</h4>
@@ -164,6 +164,8 @@
               </div>
               <br />
               <a class="btn_1" href="/shop">Continue Shopping</a>
+              <br />
+              <br />
             </div>
           </div>
         </div>

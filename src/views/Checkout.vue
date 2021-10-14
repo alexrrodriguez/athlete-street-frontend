@@ -153,7 +153,7 @@
                       </a>
                     </li>
                   </ul>
-                  <ul v-for="order in orders" :key="order.id" class="list list_2">
+                  <ul class="list list_2">
                     <li>
                       <a href="#">
                         Subtotal
@@ -194,7 +194,7 @@
                     <label for="f-option4">I’ve read and accept the</label>
                     <a href="#">terms & conditions*</a>
                   </div>
-                  <a class="btn_3" href="/confirmation">Confirm Checkout</a>
+                  <a class="btn_3" v-on:click="createOrder()">Confirm Checkout</a>
                 </div>
               </div>
             </div>
@@ -216,6 +216,8 @@ export default {
       subtotal: 0,
       tax: 0,
       total: 0,
+      newOrderParams: {},
+      userID: 0,
     };
   },
   created: function () {
@@ -233,6 +235,7 @@ export default {
     indexCart: function () {
       axios.get("/carted_products").then((response) => {
         console.log("carted products show", response);
+        this.userID = localStorage.getItem("user_id");
         this.cartedProducts = response.data;
         this.cartedProducts.forEach((carted_total, i) => {
           console.log(carted_total);
@@ -243,10 +246,11 @@ export default {
         });
       });
     },
-    indexOrders: function () {
-      axios.get("/orders").then((response) => {
-        console.log("orders index", response);
-        this.orders = response.data;
+    createOrder: function () {
+      this.newOrderParams.user_id = this.userID;
+      axios.post("/orders", this.newOrderParams).then((response) => {
+        console.log("order create", response);
+        this.$router.push("/confirmation");
       });
     },
   },
