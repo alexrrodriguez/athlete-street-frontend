@@ -80,7 +80,7 @@
         <div class="container-fluid p-0 fix">
           <div class="row">
             <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6">
-              <a :href="`/products/22`">
+              <a href="/shop">
                 <div class="single-gallery mb-30">
                   <div
                     class="gallery-img big-img"
@@ -90,7 +90,7 @@
               </a>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-              <a :href="`/products/21`">
+              <a href="/shop">
                 <div class="single-gallery mb-30">
                   <div
                     class="gallery-img big-img"
@@ -102,7 +102,7 @@
             <div class="col-xl-3 col-lg-4 col-md-12">
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
-                  <a :href="`/products/34`">
+                  <a href="/shop">
                     <div class="single-gallery mb-30">
                       <div
                         class="gallery-img small-img"
@@ -112,7 +112,7 @@
                   </a>
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-6 col-sm-6">
-                  <a :href="`/products/26`">
+                  <a href="/shop">
                     <div class="single-gallery mb-30">
                       <div
                         class="gallery-img small-img"
@@ -265,16 +265,24 @@ export default {
     return {
       populars: [],
       highlights: [],
+      galleries: [],
     };
   },
   created: function () {
     this.popularProducts();
+    this.indexGallery();
   },
   methods: {
     popularProducts: function () {
       axios.get("/popular").then((response) => {
         console.log("popular products index", response);
         this.populars = response.data;
+      });
+    },
+    indexGallery: function () {
+      axios.get("/gallery").then((response) => {
+        console.log("gallery products index", response);
+        this.galleries = response.data;
       });
     },
   },
