@@ -51,7 +51,7 @@
                     <a class="signup-login-link" href="/login">Login</a>
                     if already Registered
                   </h3>
-                  <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                  <form class="row contact_form" novalidate="novalidate" v-on:submit.prevent="submit()">
                     <div class="col-md-12 form-group p_star">
                       <input
                         type="text"
@@ -108,29 +108,6 @@
       </section>
       <!--================login_part end =================-->
     </main>
-    <!-- <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="newUserParams.name" />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newUserParams.email" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newUserParams.password" />
-      </div>
-      <div>
-        <label>Password confirmation:</label>
-        <input type="password" v-model="newUserParams.password_confirmation" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form> -->
   </div>
 </template>
 
