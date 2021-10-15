@@ -51,6 +51,9 @@
                     <a class="signup-login-link" href="/login">Login</a>
                     if already Registered
                   </h3>
+                  <ul>
+                    <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+                  </ul>
                   <form class="row contact_form" novalidate="novalidate" v-on:submit.prevent="submit()">
                     <div class="col-md-12 form-group p_star">
                       <input

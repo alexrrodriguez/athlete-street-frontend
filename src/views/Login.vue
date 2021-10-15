@@ -50,6 +50,9 @@
                     Please Sign in now
                   </h3>
                   <form class="row contact_form" v-on:submit.prevent="submit()" novalidate="novalidate">
+                    <ul>
+                      <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+                    </ul>
                     <div class="col-md-12 form-group p_star">
                       <input
                         type="email"
