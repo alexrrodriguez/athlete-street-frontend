@@ -53,7 +53,14 @@
                   </h3>
                   <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                     <div class="col-md-12 form-group p_star">
-                      <input type="text" class="form-control" id="name" name="name" value="" placeholder="Username" />
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        v-model="newUserParams.name"
+                        placeholder="Username"
+                      />
                     </div>
                     <div class="col-md-12 form-group p_star">
                       <input
