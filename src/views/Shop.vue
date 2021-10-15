@@ -1,17 +1,5 @@
 <template>
   <div class="shop">
-    <!--? Preloader Start -->
-    <div id="preloader-active">
-      <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-inner position-relative">
-          <div class="preloader-circle"></div>
-          <div class="preloader-img pere-text">
-            <img src="assets/img/logo/athlete-street.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Preloader Start -->
     <main>
       <!-- Hero Area Start-->
       <div class="slider-area">
@@ -189,14 +177,6 @@
       </section>
       <!-- Latest Products End -->
     </main>
-    <!-- <h1>All Products</h1>
-    <div v-for="product in products" v-bind:key="product.id">
-      <img :src="product.image_url" :alt="product.name" />
-      <h2>{{ product.name }}</h2>
-      <p>{{ product.price }}</p>
-      <p>{{ product.description }}</p>
-      <router-link v-bind:to="`/products/${product.id}`">More details</router-link>
-    </div> -->
   </div>
 </template>
 

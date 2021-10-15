@@ -1,17 +1,5 @@
 <template>
   <div class="login">
-    <!--? Preloader Start -->
-    <div id="preloader-active">
-      <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-inner position-relative">
-          <div class="preloader-circle"></div>
-          <div class="preloader-img pere-text">
-            <img src="assets/img/logo/athlete-street.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Preloader Start -->
     <main>
       <!-- Hero Area Start-->
       <div class="slider-area">
@@ -49,6 +37,9 @@
                     <br />
                     Please Sign in now
                   </h3>
+                  <small>Login with email: "tom@example.com" and password: "password" to demo app!</small>
+                  <br />
+                  <br />
                   <form class="row contact_form" v-on:submit.prevent="submit()" novalidate="novalidate">
                     <ul>
                       <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
@@ -90,20 +81,6 @@
       </section>
       <!--================login_part end =================-->
     </main>
-    <!-- <form v-on:submit.prevent="submit()">
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newSessionParams.email" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newSessionParams.password" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form> -->
   </div>
 </template>
 
