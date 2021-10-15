@@ -203,8 +203,8 @@
               <div class="watch-details mb-40">
                 <h2>Mens Athletic Wear</h2>
                 <p>
-                  Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+                  Shop Men's athletic wear today at Athlete Street. Save big on some of today's best athletic wear for
+                  all your athletic needs. We have some of the best brands at the lowest prices!
                 </p>
                 <a href="/shop" class="btn">Shop Mens</a>
               </div>
@@ -225,8 +225,8 @@
               <div class="watch-details mb-40">
                 <h2>Womens Athletic Wear</h2>
                 <p>
-                  Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+                  Shop Women's athletic wear today at Athlete Street. Save big on some of today's best athletic wear for
+                  all your athletic needs. We have some of the best brands at the lowest prices!
                 </p>
                 <a href="/shop" class="btn">Shop Womens</a>
               </div>
