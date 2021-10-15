@@ -56,17 +56,17 @@
             </div>
           </div>
           <div class="row">
-            <div v-for="popular in populars" v-bind:key="popular.id" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div v-for="new_product in news" v-bind:key="new_product.id" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-new-pro mb-30 text-center">
-                <a :href="`/products/${popular.id}`">
+                <a :href="`/products/${new_product.id}`">
                   <div class="product-img">
-                    <img :src="popular.image_url" :alt="popular.name" />
+                    <img :src="new_product.image_url" :alt="new_product.name" />
                   </div>
                   <div class="product-caption">
                     <h3>
-                      <a href="product_details.html">{{ popular.name }}</a>
+                      <a :href="`/products/${new_product.id}`">{{ new_product.name }}</a>
                     </h3>
-                    <span>$ {{ popular.price }}</span>
+                    <span>$ {{ new_product.price }}</span>
                   </div>
                 </a>
               </div>
@@ -266,13 +266,21 @@ export default {
       populars: [],
       highlights: [],
       galleries: [],
+      news: [],
     };
   },
   created: function () {
+    this.newProducts();
     this.popularProducts();
     this.indexGallery();
   },
   methods: {
+    newProducts: function () {
+      axios.get("/new").then((response) => {
+        console.log("new products index", response);
+        this.news = response.data;
+      });
+    },
     popularProducts: function () {
       axios.get("/popular").then((response) => {
         console.log("popular products index", response);
