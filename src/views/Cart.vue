@@ -155,12 +155,6 @@
                   </tr>
                 </tbody>
               </table>
-              <!-- <div class="checkout_btn_inner float-right">
-                <a class="btn_1 checkout_btn_1" href="/checkout">Proceed to checkout</a>
-                <br />
-                <br />
-                <a class="btn_1" href="/shop">Continue Shopping</a>
-              </div> -->
             </div>
           </div>
         </div>

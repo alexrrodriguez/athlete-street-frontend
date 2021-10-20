@@ -146,7 +146,6 @@
                     <li v-for="carted_product in cartedProducts" :key="carted_product.id">
                       <a href="#">
                         {{ carted_product.product.name }} X{{ carted_product.quantity }}
-                        <!-- <span class="middle">x {{}}</span> -->
                         <span class="last">
                           ${{ (carted_product.product.price * carted_product.quantity).toFixed(2) }}
                         </span>
