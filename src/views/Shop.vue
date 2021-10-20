@@ -99,6 +99,8 @@
                     </div>
                     <div class="popular-caption">
                       <h3>
+                        <a :href="`/products/${product.id}`">{{ product.supplier.name }}</a>
+                        <br />
                         <a :href="`/products/${product.id}`">{{ product.name }}</a>
                       </h3>
                       <span>$ {{ product.price }}</span>

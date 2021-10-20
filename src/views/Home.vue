@@ -64,6 +64,8 @@
                   </div>
                   <div class="product-caption">
                     <h3>
+                      <a :href="`/products/${new_product.id}`">{{ new_product.supplier.name }}</a>
+                      <br />
                       <a :href="`/products/${new_product.id}`">{{ new_product.name }}</a>
                     </h3>
                     <span>$ {{ new_product.price }}</span>
@@ -155,6 +157,8 @@
                 </div>
                 <div class="popular-caption">
                   <h3>
+                    <a :href="`/products/${popular.id}`">{{ popular.supplier.name }}</a>
+                    <br />
                     <a :href="`/products/${popular.id}`">{{ popular.name }}</a>
                   </h3>
                   <span>$ {{ popular.price }}</span>
