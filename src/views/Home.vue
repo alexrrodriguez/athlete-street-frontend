@@ -84,7 +84,7 @@
                 <div class="single-gallery mb-30">
                   <div
                     class="gallery-img big-img"
-                    style="background-image: url(assets/img/gallery/nike-womens-shoe-1.jpeg)"
+                    style="background-image: url(assets/img/gallery/adidas-mens-shorts.jpeg)"
                   ></div>
                 </div>
               </a>
@@ -106,7 +106,7 @@
                     <div class="single-gallery mb-30">
                       <div
                         class="gallery-img small-img"
-                        style="background-image: url(assets/img/gallery/puma-womens-shoe.jpeg)"
+                        style="background-image: url(assets/img/gallery/Puma-womens-shorts.webp)"
                       ></div>
                     </div>
                   </a>
@@ -218,7 +218,7 @@
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-6 col-md-6 col-sm-10">
               <div class="choice-watch-img mb-40">
-                <img src="assets/img/gallery/addidas-women-shoe.jpg" alt="" />
+                <img src="assets/img/gallery/Puma-womens-shorts.webp" alt="" />
               </div>
             </div>
             <div class="col-lg-5 col-md-6">
