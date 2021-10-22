@@ -23,8 +23,8 @@
           <div class="row justify-content-center">
             <div class="col-lg-8">
               <div class="product_img_slide owl-carousel">
-                <div class="single_product_img">
-                  <img :src="image" alt="" class="img-fluid" />
+                <div class="single_product_img show_container">
+                  <img :src="image" alt="" class="img-fluid show_image" />
                 </div>
               </div>
             </div>
@@ -88,7 +88,11 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.show_container {
+  text-align: center !important;
+}
+</style>
 
 <script>
 import axios from "axios";
