@@ -9,6 +9,8 @@
               <div class="col-xl-12">
                 <div class="hero-cap text-center">
                   <h2>{{ product.supplier.name }}</h2>
+                  <br />
+                  <br />
                   <h2>{{ product.name }}</h2>
                 </div>
               </div>
@@ -92,6 +94,10 @@
 .show_container {
   text-align: center !important;
 }
+/* .show_image {
+  height: auto !important;
+  max-width: 100%;
+} */
 </style>
 
 <script>

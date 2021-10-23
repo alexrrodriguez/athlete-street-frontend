@@ -35,7 +35,7 @@
                   >
                     All
                   </a>
-                  <a
+                  <!-- <a
                     class="nav-item nav-link"
                     id="nav-profile-tab"
                     data-toggle="tab"
@@ -56,6 +56,72 @@
                     aria-selected="false"
                   >
                     Womens
+                  </a> -->
+                  <a
+                    class="nav-item nav-link"
+                    id="shoes-contact-tab"
+                    data-toggle="tab"
+                    href="#shoes-contact"
+                    role="tab"
+                    aria-controls="shoes-contact"
+                    aria-selected="false"
+                  >
+                    Shoes
+                  </a>
+                  <a
+                    class="nav-item nav-link"
+                    id="shorts-contact-tab"
+                    data-toggle="tab"
+                    href="#shorts-contact"
+                    role="tab"
+                    aria-controls="shorts-contact"
+                    aria-selected="false"
+                  >
+                    Shorts
+                  </a>
+                  <a
+                    class="nav-item nav-link"
+                    id="pants-contact-tab"
+                    data-toggle="tab"
+                    href="#pants-contact"
+                    role="tab"
+                    aria-controls="pants-contact"
+                    aria-selected="false"
+                  >
+                    Pants
+                  </a>
+                  <a
+                    class="nav-item nav-link"
+                    id="shirts-contact-tab"
+                    data-toggle="tab"
+                    href="#shirts-contact"
+                    role="tab"
+                    aria-controls="shirts-contact"
+                    aria-selected="false"
+                  >
+                    Shirts
+                  </a>
+                  <a
+                    class="nav-item nav-link"
+                    id="jackets-contact-tab"
+                    data-toggle="tab"
+                    href="#jackets-contact"
+                    role="tab"
+                    aria-controls="jackets-contact"
+                    aria-selected="false"
+                  >
+                    Jackets
+                  </a>
+                  <a
+                    class="nav-item nav-link"
+                    id="hats-contact-tab"
+                    data-toggle="tab"
+                    href="#hats-contact"
+                    role="tab"
+                    aria-controls="hats-contact"
+                    aria-selected="false"
+                  >
+                    Hats
                   </a>
                 </div>
               </nav>
@@ -68,10 +134,9 @@
               <form action="#">
                 <div class="select-itms">
                   <select name="select" id="select1">
-                    <option value="">12 per page</option>
-                    <option value="">24 per page</option>
-                    <option value="">36 per page</option>
-                    <option value="">48 per page</option>
+                    <option value="">All</option>
+                    <option value="">Mens</option>
+                    <option value="">Womens</option>
                   </select>
                 </div>
               </form>
@@ -109,8 +174,8 @@
                 </div>
               </div>
             </div>
-            <!-- Card two -->
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <!-- Card male -->
+            <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               <div class="row">
                 <div
                   v-for="product in maleProducts"
@@ -140,15 +205,203 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Card three -->
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            </div> -->
+            <!-- Card female -->
+            <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
               <div class="row">
                 <div
                   v-for="product in femaleProducts"
                   v-bind:key="product.id"
                   class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
                 >
+                  <div class="single-popular-items mb-50 text-center">
+                    <div class="popular-img">
+                      <a :href="`/products/${product.id}`">
+                        <img class="home-img" :src="product.image_url" :alt="product.name" />
+                      </a>
+                      <div class="img-cap">
+                        <a :href="`/products/${product.id}`">
+                          <span>Add To Cart</span>
+                        </a>
+                      </div>
+                      <div class="favorit-items">
+                        <span class="flaticon-heart"></span>
+                      </div>
+                    </div>
+                    <div class="popular-caption">
+                      <h3>
+                        <a :href="`/products/${product.id}`">{{ product.name }}</a>
+                      </h3>
+                      <span>$ {{ product.price }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- Card shoes -->
+            <div class="tab-pane fade" id="shoes-contact" role="tabpanel" aria-labelledby="shoes-contact-tab">
+              <div class="row">
+                <div
+                  v-for="product in shoeProducts"
+                  v-bind:key="product.id"
+                  class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
+                >
+                  <div class="single-popular-items mb-50 text-center">
+                    <div class="popular-img">
+                      <a :href="`/products/${product.id}`">
+                        <img class="home-img" :src="product.image_url" :alt="product.name" />
+                      </a>
+                      <div class="img-cap">
+                        <a :href="`/products/${product.id}`">
+                          <span>Add To Cart</span>
+                        </a>
+                      </div>
+                      <div class="favorit-items">
+                        <span class="flaticon-heart"></span>
+                      </div>
+                    </div>
+                    <div class="popular-caption">
+                      <h3>
+                        <a :href="`/products/${product.id}`">{{ product.name }}</a>
+                      </h3>
+                      <span>$ {{ product.price }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card shorts -->
+            <div class="tab-pane fade" id="shorts-contact" role="tabpanel" aria-labelledby="shorts-contact-tab">
+              <div class="row">
+                <div
+                  v-for="product in shortProducts"
+                  v-bind:key="product.id"
+                  class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
+                >
+                  <div class="single-popular-items mb-50 text-center">
+                    <div class="popular-img">
+                      <a :href="`/products/${product.id}`">
+                        <img class="home-img" :src="product.image_url" :alt="product.name" />
+                      </a>
+                      <div class="img-cap">
+                        <a :href="`/products/${product.id}`">
+                          <span>Add To Cart</span>
+                        </a>
+                      </div>
+                      <div class="favorit-items">
+                        <span class="flaticon-heart"></span>
+                      </div>
+                    </div>
+                    <div class="popular-caption">
+                      <h3>
+                        <a :href="`/products/${product.id}`">{{ product.name }}</a>
+                      </h3>
+                      <span>$ {{ product.price }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card pants -->
+            <div class="tab-pane fade" id="pants-contact" role="tabpanel" aria-labelledby="pants-contact-tab">
+              <div class="row">
+                <div
+                  v-for="product in pantProducts"
+                  v-bind:key="product.id"
+                  class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
+                >
+                  <div class="single-popular-items mb-50 text-center">
+                    <div class="popular-img">
+                      <a :href="`/products/${product.id}`">
+                        <img class="home-img" :src="product.image_url" :alt="product.name" />
+                      </a>
+                      <div class="img-cap">
+                        <a :href="`/products/${product.id}`">
+                          <span>Add To Cart</span>
+                        </a>
+                      </div>
+                      <div class="favorit-items">
+                        <span class="flaticon-heart"></span>
+                      </div>
+                    </div>
+                    <div class="popular-caption">
+                      <h3>
+                        <a :href="`/products/${product.id}`">{{ product.name }}</a>
+                      </h3>
+                      <span>$ {{ product.price }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card shirts -->
+            <div class="tab-pane fade" id="shirts-contact" role="tabpanel" aria-labelledby="shirts-contact-tab">
+              <div class="row">
+                <div
+                  v-for="product in shirtProducts"
+                  v-bind:key="product.id"
+                  class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
+                >
+                  <div class="single-popular-items mb-50 text-center">
+                    <div class="popular-img">
+                      <a :href="`/products/${product.id}`">
+                        <img class="home-img" :src="product.image_url" :alt="product.name" />
+                      </a>
+                      <div class="img-cap">
+                        <a :href="`/products/${product.id}`">
+                          <span>Add To Cart</span>
+                        </a>
+                      </div>
+                      <div class="favorit-items">
+                        <span class="flaticon-heart"></span>
+                      </div>
+                    </div>
+                    <div class="popular-caption">
+                      <h3>
+                        <a :href="`/products/${product.id}`">{{ product.name }}</a>
+                      </h3>
+                      <span>$ {{ product.price }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card jackets -->
+            <div class="tab-pane fade" id="jackets-contact" role="tabpanel" aria-labelledby="jackets-contact-tab">
+              <div class="row">
+                <div
+                  v-for="product in jacketProducts"
+                  v-bind:key="product.id"
+                  class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
+                >
+                  <div class="single-popular-items mb-50 text-center">
+                    <div class="popular-img">
+                      <a :href="`/products/${product.id}`">
+                        <img class="home-img" :src="product.image_url" :alt="product.name" />
+                      </a>
+                      <div class="img-cap">
+                        <a :href="`/products/${product.id}`">
+                          <span>Add To Cart</span>
+                        </a>
+                      </div>
+                      <div class="favorit-items">
+                        <span class="flaticon-heart"></span>
+                      </div>
+                    </div>
+                    <div class="popular-caption">
+                      <h3>
+                        <a :href="`/products/${product.id}`">{{ product.name }}</a>
+                      </h3>
+                      <span>$ {{ product.price }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card hats -->
+            <div class="tab-pane fade" id="hats-contact" role="tabpanel" aria-labelledby="hats-contact-tab">
+              <div class="row">
+                <div v-for="product in hatProducts" v-bind:key="product.id" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                   <div class="single-popular-items mb-50 text-center">
                     <div class="popular-img">
                       <a :href="`/products/${product.id}`">
@@ -193,12 +446,24 @@ export default {
       products: [],
       maleProducts: [],
       femaleProducts: [],
+      shoeProducts: [],
+      shortProducts: [],
+      pantProducts: [],
+      shirtProducts: [],
+      jacketProducts: [],
+      hatProducts: [],
     };
   },
   created: function () {
     this.indexProducts();
     this.indexMaleProducts();
     this.indexFemaleProducts();
+    this.indexShoeProducts();
+    this.indexShortProducts();
+    this.indexPantProducts();
+    this.indexShirtProducts();
+    this.indexJacketProducts();
+    this.indexHatProducts();
   },
   methods: {
     indexProducts: function () {
@@ -217,6 +482,42 @@ export default {
       axios.get("/female").then((response) => {
         console.log("female products index", response);
         this.femaleProducts = response.data;
+      });
+    },
+    indexShoeProducts: function () {
+      axios.get("/shoes").then((response) => {
+        console.log("shoes products index", response);
+        this.shoeProducts = response.data;
+      });
+    },
+    indexShortProducts: function () {
+      axios.get("/shorts").then((response) => {
+        console.log("shorts products index", response);
+        this.shortProducts = response.data;
+      });
+    },
+    indexPantProducts: function () {
+      axios.get("/pants").then((response) => {
+        console.log("pants products index", response);
+        this.pantProducts = response.data;
+      });
+    },
+    indexShirtProducts: function () {
+      axios.get("/shirts").then((response) => {
+        console.log("shirts products index", response);
+        this.shirtProducts = response.data;
+      });
+    },
+    indexJacketProducts: function () {
+      axios.get("/jackets").then((response) => {
+        console.log("jackets products index", response);
+        this.jacketProducts = response.data;
+      });
+    },
+    indexHatProducts: function () {
+      axios.get("/hats").then((response) => {
+        console.log("hats products index", response);
+        this.hatProducts = response.data;
       });
     },
   },
