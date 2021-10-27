@@ -31,7 +31,7 @@
         <div class="container login-container">
           <h1>
             <a class="signup-login-link" href="/login">Login</a>
-            to view cart!
+            to view past orders!
           </h1>
         </div>
       </section>
