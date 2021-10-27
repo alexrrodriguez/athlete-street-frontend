@@ -210,7 +210,7 @@
                   Shop Men's athletic wear today at Athlete Street. Save big on some of today's best athletic wear for
                   all your athletic needs. We have some of the best brands at the lowest prices!
                 </p>
-                <a href="/shop" class="btn">Shop Mens</a>
+                <a href="/mens" class="btn">Shop Mens</a>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-10">
@@ -232,7 +232,7 @@
                   Shop Women's athletic wear today at Athlete Street. Save big on some of today's best athletic wear for
                   all your athletic needs. We have some of the best brands at the lowest prices!
                 </p>
-                <a href="/shop" class="btn">Shop Womens</a>
+                <a href="/womens" class="btn">Shop Womens</a>
               </div>
             </div>
           </div>

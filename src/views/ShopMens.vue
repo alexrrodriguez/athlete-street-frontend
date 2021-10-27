@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col-xl-12">
                 <div class="hero-cap text-center">
-                  <h2>Mens</h2>
+                  <h2>Shop Mens</h2>
                 </div>
               </div>
             </div>
@@ -134,9 +134,9 @@
               <form action="#">
                 <div class="select-itms">
                   <select name="select" id="select1">
-                    <option value="">All</option>
-                    <option value="">Mens</option>
-                    <option value="">Womens</option>
+                    <option value="">12 per page</option>
+                    <option value="">18 per page</option>
+                    <option value="">24 per page</option>
                   </select>
                 </div>
               </form>
