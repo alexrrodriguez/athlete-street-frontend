@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col-xl-12">
                 <div class="hero-cap text-center">
-                  <h2>Shop</h2>
+                  <h2>Womens</h2>
                 </div>
               </div>
             </div>
@@ -144,10 +144,14 @@
           </div>
           <!-- Nav Card -->
           <div class="tab-content" id="nav-tabContent">
-            <!-- card one -->
+            <!-- card all -->
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               <div class="row">
-                <div v-for="product in products" v-bind:key="product.id" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div
+                  v-for="product in femaleProducts"
+                  v-bind:key="product.id"
+                  class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
+                >
                   <div class="single-popular-items mb-50 text-center">
                     <div class="popular-img">
                       <a :href="`/products/${product.id}`">
@@ -175,7 +179,7 @@
               </div>
             </div>
             <!-- Card male -->
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               <div class="row">
                 <div
                   v-for="product in maleProducts"
@@ -205,9 +209,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Card female -->
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
               <div class="row">
                 <div
                   v-for="product in femaleProducts"
@@ -237,7 +241,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Card shoes -->
             <div class="tab-pane fade" id="shoes-contact" role="tabpanel" aria-labelledby="shoes-contact-tab">
               <div class="row">
@@ -435,89 +439,23 @@
   </div>
 </template>
 
-<style></style>
-
 <script>
 import axios from "axios";
 
 export default {
   data: function () {
     return {
-      products: [],
-      maleProducts: [],
       femaleProducts: [],
-      shoeProducts: [],
-      shortProducts: [],
-      pantProducts: [],
-      shirtProducts: [],
-      jacketProducts: [],
-      hatProducts: [],
     };
   },
   created: function () {
-    this.indexProducts();
-    this.indexMaleProducts();
     this.indexFemaleProducts();
-    this.indexShoeProducts();
-    this.indexShortProducts();
-    this.indexPantProducts();
-    this.indexShirtProducts();
-    this.indexJacketProducts();
-    this.indexHatProducts();
   },
   methods: {
-    indexProducts: function () {
-      axios.get("/products").then((response) => {
-        console.log("products index", response);
-        this.products = response.data;
-      });
-    },
-    indexMaleProducts: function () {
-      axios.get("/male").then((response) => {
-        console.log("male products index", response);
-        this.maleProducts = response.data;
-      });
-    },
     indexFemaleProducts: function () {
       axios.get("/female").then((response) => {
         console.log("female products index", response);
         this.femaleProducts = response.data;
-      });
-    },
-    indexShoeProducts: function () {
-      axios.get("/shoes").then((response) => {
-        console.log("shoes products index", response);
-        this.shoeProducts = response.data;
-      });
-    },
-    indexShortProducts: function () {
-      axios.get("/shorts").then((response) => {
-        console.log("shorts products index", response);
-        this.shortProducts = response.data;
-      });
-    },
-    indexPantProducts: function () {
-      axios.get("/pants").then((response) => {
-        console.log("pants products index", response);
-        this.pantProducts = response.data;
-      });
-    },
-    indexShirtProducts: function () {
-      axios.get("/shirts").then((response) => {
-        console.log("shirts products index", response);
-        this.shirtProducts = response.data;
-      });
-    },
-    indexJacketProducts: function () {
-      axios.get("/jackets").then((response) => {
-        console.log("jackets products index", response);
-        this.jacketProducts = response.data;
-      });
-    },
-    indexHatProducts: function () {
-      axios.get("/hats").then((response) => {
-        console.log("hats products index", response);
-        this.hatProducts = response.data;
       });
     },
   },

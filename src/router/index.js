@@ -11,6 +11,8 @@ import Logout from "../views/Logout.vue";
 import Cart from "../views/Cart.vue";
 import Orders from "../views/Orders.vue";
 import Contact from "../views/Contact.vue";
+import ShopMens from "../views/ShopMens.vue";
+import ShopWomens from "../views/ShopWomens.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +26,16 @@ const routes = [
     path: "/shop",
     name: "Shop",
     component: Shop,
+  },
+  {
+    path: "/mens",
+    name: "mens",
+    component: ShopMens,
+  },
+  {
+    path: "/womens",
+    name: "womens",
+    component: ShopWomens,
   },
   {
     path: "/cart",
