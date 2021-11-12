@@ -36,26 +36,25 @@
               <div class="about-details-cap mb-50">
                 <h4>Our Mission</h4>
                 <p>
-                  Consectetur adipiscing elit, sued do eiusmod tempor ididunt udfgt labore et dolore magna aliqua. Quis
-                  ipsum suspendisces gravida. Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
-                  Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
+                  Our mission is to provide top of the line athletic wear brands for athletes at affordable prices. We
+                  aim to provide the best selection of athletic wear and accessories for all your athletic needs.
                 </p>
                 <p>
-                  Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus. Risus commodo viverra sebfd
-                  dho eiusmod tempor maecenas accumsan.
+                  We strive to provide the best customer service and support to our clients in order to best fit their
+                  needs and concerns.
                 </p>
               </div>
 
               <div class="about-details-cap mb-50">
                 <h4>Our Vision</h4>
                 <p>
-                  Consectetur adipiscing elit, sued do eiusmod tempor ididunt udfgt labore et dolore magna aliqua. Quis
-                  ipsum suspendisces gravida. Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
-                  Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
+                  Our vision is to be the best suppliers of athletic wear in the market. We plan to continue our growth
+                  and expand upon our products in the future. We hope that our customers can be more than satisfied with
+                  every purchase
                 </p>
                 <p>
-                  Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus. Risus commodo viverra sebfd
-                  dho eiusmod tempor maecenas accumsan.
+                  Athlete Street understands we must listen carefully to our customers’ needs and desires, then offer a
+                  variety of options to satisfy their custom team sports apparel wishes.
                 </p>
               </div>
             </div>
